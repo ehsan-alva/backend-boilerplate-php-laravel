@@ -1,0 +1,28 @@
+version: 2
+updates:
+ - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    labels:
+      - "npm"
+      - "dependencies"
+
+ - package-ecosystem: "npm"
+    directory: "/app"
+    schedule:
+      interval: "daily"
+    labels:
+      - "npm"
+      - "dependencies"
+
+  # Maintain dependencies for Composer
+  - package-ecosystem: "composer"
+    directory: "/app"
+    registries:
+      - spark
+    schedule:
+      interval: "daily"
+    labels:
+      - "php"
+      - "dependencies"
