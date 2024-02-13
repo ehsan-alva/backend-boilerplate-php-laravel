@@ -1,7 +1,11 @@
 name: Dependabot PR Handling
 
 on:
-  pull_request:
+    pull_request:
+      types: [opened, reopened]
+      branches:
+          - master
+          - main
 
 jobs:
   check-dependabot:
