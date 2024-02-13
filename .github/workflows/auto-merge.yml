@@ -10,7 +10,7 @@ on:
 jobs:
   tests:
     runs-on: ubuntu-20.04
-    if: github.actor == 'dependabot' || github.actor == 'dependabot-preview'
+    # if: github.actor == 'dependabot' || github.actor == 'dependabot-preview'
     steps:
       - name: Checkout
         uses: actions/checkout@v1
@@ -23,7 +23,7 @@ jobs:
   auto-merge:
     needs: tests
     runs-on: ubuntu-20.04
-    if: success() && github.actor == 'dependabot' || github.actor == 'dependabot-preview'
+    # if: success() && github.actor == 'dependabot' || github.actor == 'dependabot-preview'
     steps:
       - name: Merge pull request
         uses: actions/github-script@v5
