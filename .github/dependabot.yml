@@ -10,10 +10,10 @@ updates:
 
   - package-ecosystem: "composer"
     directory: "/app"
-    registries:
-      - spark
     schedule:
       interval: "daily"
     labels:
-      - "php"
       - "dependencies"
+      - "php"
+    allow:
+      - dependency-type: "all"
